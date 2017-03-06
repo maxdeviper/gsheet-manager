@@ -47,7 +47,13 @@ class Google_Spreadsheet_Client {
         if(gettype($keys) === "string"){
             $keys = json_decode(file_get_contents($keys));
         }
-        $this->client = new Google_Client();
+        $config = new Google_Config();
+        $config->setClassConfig('Google_Cache_File', array('directory' => $this->options['cache_dir']));
+        if ($this->options['cache_dir']) {
+            $this->client = new Google_Client($config);
+        } else {
+            $this->client = new Google_Client();
+        }
         $cred = new Google_Auth_AssertionCredentials(
             $keys->client_email,
             array(Google_Service_Drive::DRIVE),
