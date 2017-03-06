@@ -1,5 +1,5 @@
 {
-    "name": "mach3/google-spreadsheet",
+    "name": "rationalboss/gsheet-manager",
     "description": "Google spreadsheet client",
     "require": {
         "google/apiclient": "1.*"
@@ -7,11 +7,5 @@
     "autoload": {
     	"classmap": ["src"]
     },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "mach3",
-            "email": "mach3ss@gmail.com"
-        }
-    ]
+    "license": "MIT"
 }
